@@ -316,6 +316,9 @@ class Bb extends AbstractRetorno implements RetornoCnab240
                 );
                 $d->setOcorrenciaDescricao($ocorrencia);
                 $d->setOcorrenciaTipo($d::OCORRENCIA_LIQUIDADA);
+                $d->setBancoPagador($this->rem(97, 99, $detalhe))
+                    ->setAgenciaPagadora($this->rem(100, 104, $detalhe))
+                    ->setAgenciaDVPagadora($this->rem(105, 105, $detalhe));
             } elseif ($d->hasOcorrencia('02')) {
                 $this->totais['entradas']++;
                 if(array_search('a4', array_map('strtolower', $msgAdicional)) !== false) {
