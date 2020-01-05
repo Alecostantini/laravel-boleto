@@ -112,6 +112,13 @@ class Detalhe implements DetalheContract
     protected $error;
 
     /**
+     * @var string
+     */
+    protected $bancoPagador;
+    protected $agenciaPagadora;
+    protected $agenciaDVPagadora;
+
+    /**
      * @return string
      */
     public function getOcorrencia()
@@ -599,6 +606,66 @@ class Detalhe implements DetalheContract
     public function setRejeicao($rejeicao)
     {
         $this->rejeicao = $rejeicao;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBancoPagador()
+    {
+        return $this->bancoPagador;
+    }
+
+    /**
+     * @param string BancoPagador
+     *
+     * @return Detalhe
+     */
+    public function setBancoPagador($bancoPagador)
+    {
+        $this->bancoPagador = $bancoPagador;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAgenciaPagadora()
+    {
+        return $this->agenciaPagadora;
+    }
+
+    /**
+     * @param string AgenciaPagadora
+     *
+     * @return Detalhe
+     */
+    public function setAgenciaPagadora($agenciaPagadora)
+    {
+        $this->agenciaPagadora = $agenciaPagadora;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAgenciaDVPagadora()
+    {
+        return $this->agenciaDVPagadora;
+    }
+
+    /**
+     * @param string AgenciaDVPagadora
+     *
+     * @return Detalhe
+     */
+    public function setAgenciaDVPagadora($agenciaDVPagadora)
+    {
+        $this->agenciaDVPagadora = $agenciaDVPagadora;
 
         return $this;
     }
